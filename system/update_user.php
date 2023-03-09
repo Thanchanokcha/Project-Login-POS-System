@@ -27,7 +27,7 @@
 			$sql = "UPDATE project SET  user_name = '" . $name . "', user_email = '" . $email . "' , user_passwd = '" . $passwd . "'  WHERE user_id = " . $user_id;
 			
 			if (mysqli_query($con, $sql)) {
-				header ("location: member.php");
+				header ("location: employee.php");
 			} else {
 				$error_msg = "อัปเดตข้อมูลไม่สำเร็จ";
 			}
@@ -65,9 +65,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_user.php">ลงชื่อเข้างาน</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_user1.php">ลาป่วย/ลากิจ</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_leave.php">ลาป่วย/ลากิจ</a></li>
                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="add.php">เพิ่มพนักงาน</a></li>
-			                <li class="nav-item"><a class="nav-link" href="member.php">รายชื่อพนักงาน</a></li>
+			                <li class="nav-item"><a class="nav-link" href="employee.php">รายชื่อพนักงาน</a></li>
                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Logout</a></li>
                     </ul>
                 </div>
@@ -75,7 +75,7 @@
         </nav>
 </head>
 
-<header><br>
+<header><br><br>
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-5 col-md-offset-4 well">
@@ -106,9 +106,9 @@
 						<input type="text" name="user_passwd" required value="<?php echo $passwd; ?>" class="form-control">
 					</div>
 
-					<center>
+					<center><br>
 					<div class="form-group">
-						<input type="submit" name="update" value="อัพเดต" class="btn btn-dark"/>
+						<input type="submit" name="update" value="อัปเดต" class="btn btn-dark" onclick="alert('อัปเดตข้อมูลการลาสำเร็จ');"/>
 					</div>
 				</fieldset>
 			</form>
@@ -116,8 +116,8 @@
 		</div>
 	</div>
 </div>
-<center><button onclick="document.location='member.php'" class="btn btn-dark">ย้อนกลับ</button></center><br>
-</header>
+<center><button onclick="document.location='employee.php'" class="btn btn-dark">ย้อนกลับ</button></center><br>
+</header><br>
 
         <footer class="py-1 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>

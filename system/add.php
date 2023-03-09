@@ -48,10 +48,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto"> 
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_user1.php">ลงชื่อเข้างาน</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_user.php">ลาป่วย/ลากิจ</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_user.php">ลงชื่อเข้างาน</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_leave.php">ลาป่วย/ลากิจ</a></li>
                     <li class="nav-item"><a class="nav-link" href="add.php">เพิ่มพนักงาน</a></li>
-			        <li class="nav-item"><a class="nav-link active" aria-current="page" href="member.php">รายชื่อพนักงาน</a></li>
+			        <li class="nav-item"><a class="nav-link active" aria-current="page" href="employee.php">รายชื่อพนักงาน</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Logout</a></li>
                     </ul>
                 </div>
@@ -63,13 +63,13 @@
             <div class="row">
                 <div class="col-lg-6">
                         <div class="container">
-                            <div class="text-center my-1"><br>
+                            <div class="text-center my-1"><br><br><br><br><br>
                                 <a href="#!"><img  src="https://upload.wikimedia.org/wikipedia/th/3/39/CPALL2015.png" height="200" width="300"/></a><br><br/> 
                                 <p class="lead mb-0">Welcome to Login System.</p>
                             </div>
                         </div>
                 </div>
-                <div class="col-lg-4" ><br>
+                <div class="col-lg-4" ><br><br>
                 <div class="card mb-4">
                 <center><div class="card-header">Register POS</div></center>
 
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        </div><br>
+        </div><br><br>
 
 		   <footer class="py-1 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>

@@ -120,8 +120,8 @@
                         <?php if (isset($_SESSION['id'])) { ?>
                         <li class="nav-item"><a class="nav-link"> รหัสพนักงาน&nbsp;<?php echo $_SESSION['id']; ?>&nbsp;คุณ<?php echo $_SESSION['name']; ?></a></li>
 		                <?php }  ?>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="history1.php">ประวัติการเข้างาน</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="history.php">ประวัติการลางาน</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="work_profile.php">ประวัติการเข้างาน</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="leave_history.php">ประวัติการลางาน</a></li>
 			            <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Logout</a></li>
                     </ul>
                 </div>
@@ -130,7 +130,7 @@
        
         <div class="container">
                 <div class>                    
-                        <div class="container"><br><br><br>
+                        <div class="container"><br><br><br><br><br>
                             <div class="text-center my-4">
                                 <a  href="#!"><img src="https://upload.wikimedia.org/wikipedia/th/3/39/CPALL2015.png" "  height="200" width="300"/></a>
                                 <br><br/>
@@ -143,7 +143,7 @@
 
         <div class="row justify-content-center">
             <div class="col-md-4 col-md-offset-4 text-center">
-            <input id="submit" type="submit" name="Check in" value="ลงชื่อเข้างาน" class="btn btn-dark"/>&nbsp;&nbsp;
+            <input id="submit" type="submit" name="Check in" value="ลงชื่อเข้างาน" class="btn btn-dark"/>
             <input id="leave" type="submit" name="leave" value="ลาป่วย/ลากิจ" class="btn btn-dark"/>
 
             <dialog id="FirstDialog">
@@ -270,7 +270,7 @@
     </div> 
 </div>
         
-<br><br><br>
+<br><br><br><br><br><br>
 
         <footer class="py-1 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>

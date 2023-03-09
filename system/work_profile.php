@@ -3,17 +3,16 @@
 
     include_once 'dbconnect.php';
 
-    $sql = "SELECT * FROM work_pos ORDER BY work_date DESC";
+    $sql = "SELECT * FROM work_pos WHERE user_id  = '".$_SESSION['id']."' ORDER BY id DESC" ; //มากไปน้อย DESC น้อยไปมาก ASC
     $result = mysqli_query($con, $sql);
 
     $cnt = 1;
 
-    if (isset($_GET['user_id'])) {
-        $sql = "DELETE FROM work_pos where user_id = " . $_GET['user_id'];
+    if (isset($_GET['id'])) {
+        $sql = "DELETE FROM work_pos where id = " . $_GET['id'];
         mysqli_query($con, $sql);
-        header("location: show_user.php");
+        header("location: work_profile.php");
     }
-
  ?>
 
 <!DOCTYPE html>
@@ -33,22 +32,24 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
         <title>LOGIN POS</title>
+
         <link rel="icon" type="image/x-icon" href="assets/CPALL1.png" />
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <div class="col-md-6"><a class="navbar-brand" href="#!">LOGIN POS</a></div>
+                <div class="col-md-3"><a class="navbar-brand" href="index.php">LOGIN POS</a></div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-8 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="show_user.php">ลงชื่อเข้างาน</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="show_leave.php">ลาป่วย/ลากิจ</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="add.php">เพิ่มพนักงาน</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="employee.php">รายชื่อพนักงาน</a></li>
-			        <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Logout</a></li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"> รหัสพนักงาน&nbsp;<?php echo $_SESSION['id']; ?>&nbsp;คุณ<?php echo $_SESSION['name']; ?></a></li>
+		                <?php }  ?>
+                        <li class="nav-item"><a class="nav-link" href="work_profile.php">ประวัติการเข้างาน</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="leave_history.php">ประวัติการลางาน</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">ย้อนกลับ</a></li>
+			            <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Logout</a></li>
                 </ul>
                 </div>
             </div>
@@ -57,14 +58,15 @@
  <header><br>
  <div class="container">
             <h1 class="text-center">ตารางลงชื่อเข้างาน</h1>	
-            <div class="table-responsive">
-                <table class="table table-bordered  bg-white ">
+            <div class="table-responsive ">
+                <table class="table table-bordered  bg-white table-sm table-hover">
                     <thead>
                      <tr class="text-nowrap text-center">
                          <th>รหัสพนักงาน</th>
                          <th>ชื่อ</th>
                          <th>วันที่</th>
                          <th>เวลา</th> 
+                         <th></th>
                      </tr>
                 </thead>
             <tbody>
@@ -75,6 +77,7 @@
                         <td><?php echo $row['user_name'];?></td>
                         <td><?php echo $row['work_date'];?></td>
                         <td><?php echo $row['work_in'];?></td>
+                        <td><input type="button" value="ลบ" name="btn-delete" class="btn btn-danger" onclick ="delete_user (<?php echo $row['id']; ?>);"></td>
                     </tr>
                 <?php } ?>
                 </tbody>
@@ -83,19 +86,18 @@
             <center><div>มีข้อมูลทั้งหมด <?php echo mysqli_num_rows($result) . " ข้อมูล"; ?></div></center><br>
      </div>
  </div>
-     <script>
+    <script>
         function delete_user(id) {
             if (confirm("คุณต้องการลบข้อมูลหรือไม่ ?")) {
-                window.location.href = "show_leave.php?user_id=" + id;
+                window.location.href = "work_profile.php?id=" + id;
             }
         }
-        function update_user(id) {
-            window.location.href = "update_user.php?user_id=" + id;
-        }
+     
     </script>
 </header>
 
-    <footer class="py-1 bg-dark">
+
+      <footer class="py-1 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
