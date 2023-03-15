@@ -42,6 +42,7 @@
     </head>
 
     <body>
+        <!-- เมนู (Navigator) -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <div class="col-md-6"><a class="navbar-brand" href="#!">LOGIN POS</a> </div>
@@ -72,7 +73,7 @@
                 <div class="col-lg-4" ><br><br>
                 <div class="card mb-4">
                 <center><div class="card-header">Register POS</div></center>
-
+<!-- แบบฟอร์มการเพิ่มพนักงาน -->
 <div class="card-body">
 			<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
 				<fieldset>
@@ -95,19 +96,18 @@
 						<label for="name">รหัสผ่าน</label>
 						<input type="password" name="user-password" placeholder="ป้อนรหัสผ่าน" required class="form-control" />
 					</div>
-
-					<center>
-                    <div class="form-group">
+                    
+					<!--ปุ่มเพิ่มข้อมูลพนักงา่น-->
+                    <div class="form-group text-center">
 						<input type="submit" name="signup" value="เพิ่มข้อมูลพนักงาน" class="btn btn-dark" onclick="alert('บันทึกข้อมูลการลาสำเร็จ');"/>
 					</div>
                     
-					</center>
 				</fieldset>
 			</form>
 
 			<span class="text-danger">
 				                <?php 
-					                if (isset($error_mrg)) {
+					                if (isset($error_mrg)) { //แจ้ง error เมื่อกรอกข้อมูลไม่ครบ
 						                echo $error_mrg; 
 					                }
 				                ?>

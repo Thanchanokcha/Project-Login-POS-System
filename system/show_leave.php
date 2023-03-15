@@ -35,6 +35,7 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+        <!-- เมนู (Navigator) -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <div class="col-md-6"><a class="navbar-brand" href="#!">LOGIN POS</a></div>
