@@ -3,7 +3,7 @@
 
     include_once 'dbconnect.php';
 
-    $sql = "SELECT * FROM work_pos ORDER BY work_date DESC";
+    $sql = "SELECT * FROM work_pos ORDER BY id DESC";
     $result = mysqli_query($con, $sql);
 
     $cnt = 1;
@@ -97,10 +97,6 @@
         }
     </script>
 </header>
-
-    <footer class="py-1 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>
-        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>

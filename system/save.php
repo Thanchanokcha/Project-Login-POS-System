@@ -25,7 +25,7 @@ include("dbconnect.php");
 				echo "window.location = 'index.php'; ";
 				echo "</script>";
 				}
-
+        //ส่งแจ้งเตือนไปยังไลน์
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
@@ -60,8 +60,7 @@ include("dbconnect.php");
         } 
         curl_close( $chOne );   
     
-    }
-		//save workout			 	   
+    }	 	   
 
 		
 ?>

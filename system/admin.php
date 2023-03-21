@@ -51,7 +51,7 @@
                 <div class="col-lg-6">
                         <div class="container">
                             <div class="text-center my-1"><br><br><br>
-                                <a href="#!"><img  src="https://upload.wikimedia.org/wikipedia/th/3/39/CPALL2015.png" height="200" width="300"/></a><br><br/>
+                                <a href="#!"><img  src="https://www.gosoft.co.th/wp-content/uploads/2019/01/cropped-LOGO-gosoft.png" height="200" width="425"/></a><br><br/>
                                 <p class="lead mb-0">Welcome to Login System.</p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
 		</div>
 	</div>
 </div>
-</div><br><br><br><br><br><br>
+</div><br><br><br><br><br>
 
    <footer class="py-1 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>

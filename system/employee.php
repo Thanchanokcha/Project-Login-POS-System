@@ -3,19 +3,19 @@
 
     include_once 'dbconnect.php';
 
-    $sql = "SELECT * FROM project ORDER BY user_id ASC";
+    $sql = "SELECT * FROM employee ORDER BY user_id ASC";
     $result = mysqli_query($con, $sql);
 
     $cnt = 1;
 
     if (isset($_GET['user_id'])) {
-        $sql = "DELETE FROM project where user_id = " . $_GET['user_id'];
+        $sql = "DELETE FROM employee where user_id = " . $_GET['user_id'];
         mysqli_query($con, $sql);
         header("location: employee.php");
     }
 
     if (isset($_GET['user_id'])) {
-		$sql = "SELECT * FROM project WHERE user_id = " . $_GET['user_id'];
+		$sql = "SELECT * FROM employee WHERE user_id = " . $_GET['user_id'];
 		$result = mysqli_query($con, $sql);
 		$row_update = mysqli_fetch_array($result);
 		$user_id = $row_update['user_id'];
@@ -35,7 +35,7 @@
 
 
 		if (!$validate_error) {
-			$sql = "UPDATE project SET  user_name = '" . $name . "', user_email = '" . $email . "' , user_passwd = '" . $passwd . "'  WHERE user_id = " . $user_id;
+			$sql = "UPDATE employee SET  user_name = '" . $name . "', user_email = '" . $email . "' , user_passwd = '" . $passwd . "'  WHERE user_id = " . $user_id;
 			
 			if (mysqli_query($con, $sql)) {
 				header ("location: employee.php");
@@ -142,10 +142,6 @@
         }
     </script>
 </header>
-
-      <footer class="py-1 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Thankyou</p></div>
-        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>

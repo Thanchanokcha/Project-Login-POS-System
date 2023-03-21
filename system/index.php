@@ -3,7 +3,7 @@
 
 		include_once "dbconnect.php";
         if (isset($_GET['user_id'])) {
-            $sql = "SELECT * FROM project WHERE user_id = " . $_GET['user_id'];
+            $sql = "SELECT * FROM employee WHERE user_id = " . $_GET['user_id'];
             $result = mysqli_query($con, $sql);
         }
 
@@ -133,7 +133,7 @@
                 <div class>                    
                         <div class="container"><br><br><br><br><br>
                             <div class="text-center my-4">
-                                <a  href="#!"><img src="https://upload.wikimedia.org/wikipedia/th/3/39/CPALL2015.png" "  height="200" width="300"/></a>
+                                <a  href="#!"><img src="https://www.gosoft.co.th/wp-content/uploads/2019/01/cropped-LOGO-gosoft.png" "  height="200" width="500"/></a>
                                 <br><br/>
                                 <p class="lead mb-0">Welcome to Login System.</p><br>
                                 </center>

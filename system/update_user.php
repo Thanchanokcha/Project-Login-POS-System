@@ -4,7 +4,7 @@
     include_once 'dbconnect.php';
 
 	if (isset($_GET['user_id'])) {
-		$sql = "SELECT * FROM project WHERE user_id = " . $_GET['user_id'];
+		$sql = "SELECT * FROM employee WHERE user_id = " . $_GET['user_id'];
 		$result = mysqli_query($con, $sql);
 		$row_update = mysqli_fetch_array($result);
 		$user_id = $row_update['user_id'];
@@ -24,7 +24,7 @@
 
 
 		if (!$validate_error) {
-			$sql = "UPDATE project SET  user_name = '" . $name . "', user_email = '" . $email . "' , user_passwd = '" . $passwd . "'  WHERE user_id = " . $user_id;
+			$sql = "UPDATE employee SET  user_name = '" . $name . "', user_email = '" . $email . "' , user_passwd = '" . $passwd . "'  WHERE user_id = " . $user_id;
 			
 			if (mysqli_query($con, $sql)) {
 				header ("location: employee.php");

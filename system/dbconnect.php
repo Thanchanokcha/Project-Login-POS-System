@@ -3,7 +3,7 @@
     $host = "localhost";
     $db_username = "root";
     $db_password = ""; 
-    $db_name = "system";
+    $db_name = "pos_system";
 
     $con = mysqli_connect($host, $db_username, $db_password, $db_name)
     or die("Error " . mysqli_error($con));
