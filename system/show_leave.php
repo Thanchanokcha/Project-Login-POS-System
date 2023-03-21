@@ -6,12 +6,12 @@
     $result = mysqli_query($con, $sql);
 
     $cnt = 1;
-
-    if (isset($_GET['user_id'])) {
-        $sql = "DELETE FROM post where user_id = " . $_GET['user_id'];
+    if (isset($_GET['id'])) {
+        $sql = "DELETE FROM post where id = " . $_GET['id'];
         mysqli_query($con, $sql);
         header("location: show_leave.php");
     }
+    
  ?>
 
 <!DOCTYPE html>
@@ -66,6 +66,7 @@
                          <th>วันที่สิ้นสุด</th>
                          <th>เวลา</th>
                          <th>หมายเหตุ</th>
+                         <th>กิจกรรม</th>
                      </tr>
                 </thead>
             <tbody>
@@ -80,6 +81,7 @@
                         <td><?php echo $row['user_date2'];?></td>
                         <td><?php echo $row['user_time'];?></td>
                         <td><?php echo $row['user_note'];?></td>
+                        <td><input type="button" value="ลบ" name="btn-delete" class="btn btn-danger" onclick ="delete_user (<?php echo $row['id']; ?>);"></td>
                     </tr>
                 <?php } ?>
                 </tbody>
@@ -91,7 +93,7 @@
      <script>
         function delete_user(id) {
             if (confirm("คุณต้องการลบข้อมูลหรือไม่ ?")) {
-                window.location.href = "show_leave.php?user_id=" + id;
+                window.location.href = "show_leave.php?id=" + id;
             }
         }
 

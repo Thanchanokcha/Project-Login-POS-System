@@ -67,7 +67,6 @@
                          <th>ชื่อ</th>
                          <th>วันที่</th>
                          <th>เวลา</th> 
-                         <th></th>
                      </tr>
                 </thead>
             <tbody>
@@ -78,7 +77,6 @@
                         <td><?php echo $row['user_name'];?></td>
                         <td><?php echo $row['work_date'];?></td>
                         <td><?php echo $row['work_in'];?></td>
-                        <td><input type="button" value="ลบ" name="btn-delete" class="btn btn-danger" onclick ="delete_user (<?php echo $row['id']; ?>);"></td>
                     </tr>
                 <?php } ?>
                 </tbody>

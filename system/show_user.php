@@ -9,7 +9,7 @@
     $cnt = 1;
 
     if (isset($_GET['user_id'])) {
-        $sql = "DELETE FROM work_pos where user_id = " . $_GET['user_id'];
+        $sql = "DELETE FROM work_pos where id = " . $_GET['id'];
         mysqli_query($con, $sql);
         header("location: show_user.php");
     }
@@ -65,7 +65,8 @@
                          <th>รหัสพนักงาน</th>
                          <th>ชื่อ</th>
                          <th>วันที่</th>
-                         <th>เวลา</th> 
+                         <th>เวลา</th>
+                         <th>กิจกรรม</th>
                      </tr>
                 </thead>
             <tbody>
@@ -76,6 +77,7 @@
                         <td><?php echo $row['user_name'];?></td>
                         <td><?php echo $row['work_date'];?></td>
                         <td><?php echo $row['work_in'];?></td>
+                        <td><input type="button" value="ลบ" name="btn-delete" class="btn btn-danger" onclick ="delete_user (<?php echo $row['id']; ?>);"></td>
                     </tr>
                 <?php } ?>
                 </tbody>
