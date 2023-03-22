@@ -133,7 +133,7 @@
                 <div class>                    
                         <div class="container"><br><br><br><br><br>
                             <div class="text-center my-4">
-                                <a  href="#!"><img src="https://www.gosoft.co.th/wp-content/uploads/2019/01/cropped-LOGO-gosoft.png" "  height="200" width="500"/></a>
+                                <a  href="#!"><img src="https://www.gosoft.co.th/wp-content/uploads/2019/01/cropped-LOGO-gosoft.png" height="180" width="800"/></a>
                                 <br><br/>
                                 <p class="lead mb-0">Welcome to Login System.</p><br>
                                 </center>
